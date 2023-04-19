@@ -1,0 +1,16 @@
+@media only screen and (min-width: 768px) {
+  .my-style {
+    display: flex;
+    justify-items: stretch !important;
+    justify-content: space-between;
+    input,
+    label {
+      min-width: 500px;
+    }
+  }
+}
+
+.star {
+  font-size: 1.1rem;
+  color: red;
+}

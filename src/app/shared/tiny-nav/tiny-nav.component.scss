@@ -1,0 +1,9 @@
+@import "../../../colors";
+nav {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  min-height: 50px;
+  i {
+    color: $mySub !important;
+  }
+}

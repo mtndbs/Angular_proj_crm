@@ -1,0 +1,94 @@
+@import "./../../../styles.scss";
+.container {
+  max-width: 960px;
+}
+.my-shadow {
+  box-shadow: 0px 8px 18px 1px rgba(0, 0, 0, 0.2) !important;
+}
+.crm-logo {
+  padding-top: 110px;
+  h1 {
+    color: white !important;
+  }
+  i {
+    padding-top: 50px;
+    color: $mySub;
+    font-size: 5rem;
+  }
+}
+/*
+   * Custom translucent site header
+   */
+
+.site-header {
+  background-color: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+  color: #8e8e8e;
+  transition: color 0.15s ease-in-out;
+}
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+   * Dummy devices (replace them with your own or something else entirely!)
+   */
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #333;
+  border-radius: 21px;
+  transform: rotate(30deg);
+  box-shadow: inset 0px 4px 8px 1px rgba(255, 252, 252, 0.212) !important;
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+// .my-style {
+//   background-color: $myDark !important;
+//   color: white;
+// }
+// .my-style {
+//   background-color: white !important;
+//   color: $myDark !important;
+// }
+.btn-outline-success {
+  color: black !important;
+}
+/*
+   * Extra utilities
+   */
+
+.flex-equal > * {
+  flex: 1;
+}
+@media (min-width: 768px) {
+  .flex-md-equal > * {
+    flex: 1;
+  }
+}

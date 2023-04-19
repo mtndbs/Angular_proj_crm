@@ -1,0 +1,21 @@
+@import "../../../styles.scss";
+
+.modal-sheet .modal-dialog {
+  width: 380px;
+  transition: bottom 0.75s ease-in-out;
+}
+.modal-sheet .modal-footer {
+  padding-bottom: 2rem;
+}
+
+.fa-pen-to-square:hover {
+  color: $myPrime;
+}
+
+.my-shadow {
+  box-shadow: 0px 10px 20px 4px rgba(0, 0, 0, 0.288) !important;
+}
+
+.fa-eye:hover {
+  color: $myTurk;
+}

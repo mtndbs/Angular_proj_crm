@@ -1,0 +1,20 @@
+@import "./../../../styles.scss";
+
+.my-err-field {
+  padding-top: 4px;
+  height: 20px;
+}
+label {
+  font-size: 15px;
+  transform: translateY(-28px);
+  display: inline-block;
+}
+
+.input-text {
+  background-color: white;
+  padding: 2px;
+}
+a {
+  color: $mySub;
+  text-decoration: none;
+}

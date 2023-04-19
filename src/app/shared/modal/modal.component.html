@@ -1,0 +1,30 @@
+<button class="btn btn-secondery ms-1 px-1" data-bs-toggle="modal" [attr.data-bs-target]="'#a'+i">
+    <i class="fa-solid fa-user-minus"></i>
+    <div class="modal fade" [id]="'a'+i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content rounded-3 shadow">
+                <div class="modal-header border-bottom-0">
+                    <h5><i class="fa-solid fa-user-minus"></i> {{title}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p class="modal-body py-0 text-dark">
+                        You sure want to
+                        Delete <strong>"{{fName}} {{lName}}</strong>" ?
+                    </p>
+                </div>
+                <div class="modal-footer flex-nowrap p-0">
+                    <button type="button" (click)="onButtonClick()" (click)="genDelete(id)"
+                        class="btn btn-lg modal_btn_delete fs-6  text-decoration-none col-6 py-3 m-0 rounded-0 border-end"><strong>Yes,
+                            Delete</strong></button>
+                    <button type="button"
+                        class="btn btn-lg modal_btn_cancel fs-6 text-decoration-none col-6 py-3 m-0 rounded-0"
+                        data-bs-dismiss="modal">No thanks</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <i class="bi bi-trash"></i>
+</button>

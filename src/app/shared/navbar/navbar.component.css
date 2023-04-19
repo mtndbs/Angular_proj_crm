@@ -1,0 +1,46 @@
+.nav_icon {
+  transition: transform 1s;
+}
+
+.nav_icon:hover {
+  transform: translateX(-7px);
+  filter: brightness(1.75);
+}
+
+li a {
+  color: white;
+}
+li a:hover {
+  color: #198754;
+}
+li a .nav_button {
+  font-size: 1.2rem;
+  transition: transform 1s;
+}
+li a:hover .nav_button {
+  transform: scale(1.1);
+  color: #198754;
+}
+
+.form-control-dark {
+  border-color: var(--bs-gray);
+}
+
+.form-control-dark:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+
+.icon_center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}/*# sourceMappingURL=navbar.component.css.map */

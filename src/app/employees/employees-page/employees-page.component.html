@@ -1,0 +1,92 @@
+<section class="intro">
+    <div class="bg-image h-100">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 ">
+                        <!-- <app-tiny-nav [title]="title" [icon]="icon">
+                        </app-tiny-nav> -->
+
+                        <div class="card shadow-2-strong my-shadow " style="background-color: #f5f7fa;">
+                            <nav class="navbar navbar-expand-lg navbar-dark bg-dark tiny-nav">
+                                <div class="container-fluid">
+                                    <div>
+                                        <h3 class="text-light">
+                                            <i [ngClass]="icon"></i>
+                                            {{title}}
+                                        </h3>
+                                    </div>
+                                    <form class="" [formGroup]="searchForm" role="search">
+                                        <input type="search" formControlName="employee" (keyup)="searchFunc()" (focus)="
+                                            searchFunc()" class="form-control" placeholder="  Search..."
+                                            aria-label="Search">
+                                    </form>
+                                </div>
+                            </nav>
+                            <div class="card-body ">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="d-none d-md-table-cell">No.</th>
+                                                <th scope="col" class="d-none d-md-table-cell">Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Birthday</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let  employee of searchEmp; index as i">
+                                                <td class="d-none d-md-table-cell">{{i+1}}</td>
+                                                <td class="d-none d-md-table-cell">{{employee.name}}</td>
+                                                <td>{{employee.email}}</td>
+                                                <td><button (click)="callNumber(employee.phone)"
+                                                        class="btn phone-btn  ms-1 px-1">
+                                                        <i class="fa-solid fa-phone-volume"></i>
+                                                        {{employee.phone}}
+                                                    </button>
+
+                                                </td>
+                                                <td>{{employee.birthday | date:"shortDate"}}</td>
+                                                <td>
+                                                    <app-modal (buttonClicked)="refreshItems()"
+                                                        [myGenericDelete]="myGenericDelete" [i]="i"
+                                                        [fName]="employee.name" [title]="'Remove Emplpyee'"
+                                                        [id]="employee._id"></app-modal>
+
+
+
+                                                    <!-- <button (click)="callNumber(employee.phone)"
+                                                        class="btn btn-secondery  ms-1 px-1">
+                                                        <i class="fa-solid fa-phone-volume"></i>
+                                                    </button> -->
+                                                    <button routerLink="/employees/edit/{{employee._id}}"
+                                                        class="btn btn-secondery  ms-1 px-1">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </button>
+
+                                                    <button (click)="sendWhatApp(employee.phone)"
+                                                        class="btn  whatsApp ms-1 px-1 py-0">
+                                                        <i class="fa-brands fa-whatsapp"></i> Chat
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="d-flex justify-content-between">
+
+                                        <app-add-employee-modal
+                                            (buttonClicked)="refreshItems()"></app-add-employee-modal>
+                                        <app-back-btn style="padding-right: 10px;"></app-back-btn>
+                                    </div>
+                                    <!-- <app-modal-form [title]="'Add employee'"></app-modal-form> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

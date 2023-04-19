@@ -1,0 +1,63 @@
+<section class="intro">
+    <div class="bg-image h-100">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <app-tiny-nav [title]="title" [icon]="icon">
+                        </app-tiny-nav>
+                        <div class="card shadow-2-strong my-shadow" style="background-color: #f5f7fa;">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="d-none d-md-table-cell">No.</th>
+                                                <th scope="col" class="d-none d-md-table-cell">First Name</th>
+                                                <th scope="col" class="d-none d-md-table-cell">Last Name</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Phone</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let customer of customers index as i">
+                                                <td class="d-none d-md-table-cell">{{i+1}}</td>
+                                                <td class="d-none d-md-table-cell">{{customer.firstName}}</td>
+                                                <td class="d-none d-md-table-cell">{{customer.lastName}}</td>
+                                                <td>{{customer.email}}</td>
+                                                <td>{{customer.phone}}</td>
+                                                <td>
+                                                    <app-modal [myGenericDelete]="myGenericDelete"
+                                                        (buttonClicked)="refreshItems()" [i]="i"
+                                                        [fName]="customer.firstName" [title]="'Remove Customer'"
+                                                        [lName]="customer.lastName" [id]="customer._id"></app-modal>
+                                                    <button routerLink="/edit/{{customer._id}}"
+                                                        class="btn btn-secondery  ms-1 px-1">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </button>
+                                                    <button routerLink="{{customer._id}}"
+                                                        class="btn btn-secondery  ms-1 px-1">
+                                                        <i class="fa-solid fa-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+
+                                    </table>
+                                    <div class="d-flex justify-content-between">
+                                        <app-add-customers-modal
+                                            (buttonClicked)="refreshItems()"></app-add-customers-modal>
+                                        <app-back-btn style="padding-right: 10px;"></app-back-btn>
+                                    </div>
+                                    <!-- <app-modal-form [title]="'Add customer'"></app-modal-form> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

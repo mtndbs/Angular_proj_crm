@@ -1,0 +1,62 @@
+<div class="d-flex row justify-content-center">
+    <div class="form-signin col-md-4 m-auto mb-5">
+        <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+            <h1 class="text-center mt-4 mb-5">
+                <h2>Company
+                    <i class="fa-solid fa-angles-up text-success"></i>
+                    CRM
+                </h2>
+            </h1>
+
+
+
+            <div class="form-floating mb-3">
+                <input type="name" class="form-control" formControlName="name" id="floatingInput"
+                    placeholder="Your name...">
+                <label for="floatingInput"><span class="input-text">User name</span></label>
+                <div class="container text-danger my-err-field">
+                    <app-err-field [formField]="getFieldControl('name')"></app-err-field>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" formControlName="email" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput"><span class="input-text">Email address</span></label>
+                <div class="container text-danger my-err-field">
+                    <app-err-field [formField]="getFieldControl('email')"></app-err-field>
+                </div>
+
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="password" id="floatingPassword"
+                    placeholder="Password">
+                <label for="floatingPassword"><span class="input-text">Password</span></label>
+                <div class="container text-danger my-err-field">
+                    <app-err-field [formField]="getFieldControl('password')"></app-err-field>
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" formControlName="confirm" id="floatingPassword"
+                    placeholder="Password">
+                <label for="floatingPassword"><span class="input-text">Confirm password</span></label>
+                <div class="container text-danger my-err-field">
+                    <app-err-field [formField]="getFieldControl('confirm')"></app-err-field>
+                </div>
+            </div>
+
+
+            <button class="w-100 btn btn-lg btn-success" (click)="loadingFunction()" type="submit"> <span
+                    *ngIf="loading == true" class="spinner-border spinner-border-sm" role="status"
+                    aria-hidden="true"></span>{{btnText}}</button>
+
+        </form>
+    </div>
+    <div class="mt-3">
+        <p class="text-center">You have allready acount? <a routerLink="/login">Go to login</a> </p>
+    </div>
+</div>
+<div *ngIf="errMsgView==true" class="d-flex justify-content-center err-p">
+    <div class="rounded text-danger bg-none p-2 mb-2 d-inline"><i class="fa-solid fa-triangle-exclamation"></i>
+        {{errorMsg}}</div>
+</div>

@@ -1,0 +1,32 @@
+@import "../../../colors";
+.tiny-nav {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  i {
+    color: $mySub !important;
+  }
+}
+
+.whatsApp {
+  color: white !important;
+  background-color: $myPrime !important;
+}
+
+.whatsApp:hover {
+  background-color: #25d366 !important;
+}
+
+.fa-pen-to-square:hover {
+  color: $myTurk;
+}
+
+.my-shadow {
+  box-shadow: 0px 10px 20px 4px rgba(0, 0, 0, 0.288) !important;
+}
+
+.phone-btn:hover {
+  background-color: $myTurk;
+}

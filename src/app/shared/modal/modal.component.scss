@@ -1,0 +1,21 @@
+@import "./../../../styles.scss";
+.modal_btn_delete {
+}
+.modal_btn_delete:hover {
+  color: rgb(255, 36, 36);
+}
+.modal_btn_cancel:hover {
+  color: green;
+}
+.fa-solid {
+}
+.fa-solid:hover {
+  color: red;
+}
+
+h5 {
+  i {
+    padding-right: 10px;
+    color: $mySub;
+  }
+}

@@ -1,0 +1,61 @@
+<section class="intro">
+    <div class="bg-image h-100">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <app-tiny-nav [title]="title" [icon]="icon">
+                        </app-tiny-nav>
+                        <div class="card shadow-2-strong" style="background-color: #f5f7fa;">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div class="my-style">
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control rounded-1" id="floatingInput"
+                                                placeholder="Your Name" [value]="customer?.firstName" readonly>
+                                            <label for="floatingInput"><span class="star">*</span> First name:</label>
+                                        </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control rounded-1" id="floatingInput"
+                                                placeholder="Your Name" [value]="customer?.lastName" readonly>
+                                            <label for="floatingInput"><span class="star">*</span> Last name:
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="my-style">
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control rounded-1" id="floatingInput"
+                                                placeholder="Your Name" [value]="customer?.phone" readonly>
+                                            <label for="floatingInput"><span class="star">*</span> Phone:</label>
+                                        </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control rounded-1" id="floatingInput"
+                                                placeholder="Your Name" [value]="customer?.email" readonly>
+                                            <label for="floatingInput"><span class="star">*</span> Email:
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control rounded-1" id="floatingInput"
+                                            placeholder="Your Name" [value]="customer?.address" readonly>
+                                        <label for="floatingInput"><span class="star">*</span> Adress:
+                                        </label>
+                                    </div>
+
+                                    <!-- <input type="text" class="form-control"> -->
+                                    <!-- <label for=""></label> -->
+                                </div>
+                                <div class="d-flex justify-content-end">
+                                    <app-back-btn style="padding-right: 10px;"></app-back-btn>
+                                </div>
+                                <!-- <app-add-customers-modal (buttonClicked)="refreshItems()"></app-add-customers-modal> -->
+                                <!-- <app-modal-form [title]="'Add customer'"></app-modal-form> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

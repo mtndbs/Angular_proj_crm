@@ -1,0 +1,42 @@
+@import "./../../../styles.scss";
+.my-shadow {
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.548);
+}
+
+.user-btn {
+  box-sizing: border-box;
+  border-radius: 50%;
+  padding-left: 8.5px;
+  padding-top: 18px;
+  line-height: 0.3px;
+  width: 40px;
+  height: 40px;
+  color: $mySub;
+  background-color: $myDark;
+  font-size: 1.5rem;
+  font-weight: 550;
+  box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.509) !important;
+}
+.user-btn:hover {
+  background-color: $mySub;
+  color: $myDark;
+}
+
+.user-btn-couter {
+  box-sizing: border-box;
+  border-radius: 50%;
+  padding-left: 8.5px;
+  padding-top: 18px;
+  line-height: 0.3px;
+  width: 40px;
+  height: 40px;
+  background-color: $mySub;
+  color: $myDark;
+  font-size: 1.5rem;
+  font-weight: 550;
+  box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.509) !important;
+}
+.user-btn-counter:hover {
+  color: $mySub;
+  background-color: $myDark;
+}

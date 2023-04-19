@@ -1,0 +1,5 @@
+<app-navbar *ngIf="loggedIn()"></app-navbar>
+<main class="p-3">
+    <router-outlet></router-outlet>
+</main>
+<app-footer *ngIf="loggedIn()" class="bottom"></app-footer>

@@ -1,0 +1,89 @@
+@import "../../../styles.scss";
+
+.nav_icon {
+  transition: transform 1s;
+}
+.nav_icon:hover {
+  transform: translateX(-7px);
+  filter: brightness(1.75);
+}
+li {
+  a {
+    color: white;
+  }
+  a:hover {
+    color: $myTurk;
+  }
+  a .nav_button {
+    font-size: 1.2rem;
+    transition: transform 1s;
+  }
+  a:hover .nav_button {
+    transform: scale(1.1);
+    color: $myTurk;
+    // filter: brightness(1.75);
+  }
+}
+.logout-btn {
+  background-color: $mySub !important;
+  border: solid 1px $mySub !important;
+}
+.logout-btn:hover {
+  background-color: $myDark !important;
+  color: white !important;
+}
+.sign-btn {
+  background-color: $myDark !important;
+  color: white !important;
+}
+.sign-btn:hover {
+  // color: $myTurk !important;
+  background-color: $mySub !important;
+  border: solid 1px $mySub !important;
+}
+.form-control-dark {
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+.icon_center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.my-shadow {
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.548);
+}
+
+// .user-btn {
+//   box-sizing: border-box;
+//   border-radius: 50%;
+//   padding-left: 8.5px;
+//   padding-top: 18px;
+//   line-height: 0.3px;
+//   width: 40px;
+//   height: 40px;
+//   color: $mySub;
+//   background-color: $myDark;
+//   font-size: 1.5rem;
+//   font-weight: 550;
+//   box-shadow: 0px 9px 18px 0px rgba(0, 0, 0, 0.509) !important;
+// }
+// .user-btn:hover {
+//   background-color: $mySub;
+//   color: $myDark;
+// }
+
+.pop-list {
+}

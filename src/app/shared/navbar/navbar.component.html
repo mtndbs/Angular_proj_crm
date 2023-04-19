@@ -1,0 +1,84 @@
+<header class="my-shadow">
+    <div class="px-3 py-2 text-light bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <h2 class="nav_icon">Company
+                        <i class="fa-solid fa-angles-up text-success"></i>
+                        <!-- <i class="fa-solid fa-angles-up fa-flip"></i> -->
+                        CRM
+                    </h2>
+                </a>
+
+
+
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                    <!-- <li>
+                        <a href="#" class="nav-link text-secondary">
+                            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                <use xlink:href="#home" />
+                            </svg>
+                            Home
+                        </a>
+                    </li> -->
+
+                    <li>
+                        <a routerLink="/dashboard" class="nav-link">
+                            <div class="bi d-block mx-auto mb-1">
+                                <div class="icon_center">
+                                    <i class="fa-solid fa-chart-simple nav_button"></i>
+                                </div>
+                            </div>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/employees" class="nav-link active" aria-current="page">
+
+                            <div class="bi d-block mx-auto mb-1">
+                                <div class="icon_center">
+                                    <i class="fa-solid fa-user-tie nav_button"></i>
+                                </div>
+                            </div>
+                            Employee
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/customers" class="nav-link active" aria-current="page">
+                            <div class="bi d-block mx-auto mb-1">
+                                <div class="icon_center">
+                                    <i class="fa-solid fa-house-chimney-user nav_button"></i>
+                                </div>
+                            </div>
+                            Customers
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="px-3 py-2 border-bottom mb-3">
+        <div class="container d-flex flex-wrap justify-content-center">
+            <div class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+                <h4>Welcome {{currentUser.name}} </h4>
+            </div>
+
+            <div class="text-end">
+                <!-- <button type="button" class="btn btn-light text-dark me-2">
+                    <a routerLink="/login" class="nav-link active" aria-current="page">Login</a>
+                </button> -->
+                <button type="button" class="btn btn-dark logout-btn me-2">
+                    <a class="nav-link active" (click)="logout()" aria-current="page">Log-out</a>
+                    <!-- Login -->
+                </button>
+                <button type="button" class="btn btn-dark sign-btn text-dark me-2">
+                    <a routerLink="/signup" class="nav-link active" aria-current="page">Sign-up</a>
+                    <!-- signup -->
+                </button>
+                <app-user-btn (click)="popupFunc()"></app-user-btn>
+            </div>
+        </div>
+    </div>
+</header>
+
+<app-pop-list *ngIf="popup" class="pop-list"></app-pop-list>

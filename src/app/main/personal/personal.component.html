@@ -1,0 +1,35 @@
+<section class="intro">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card-body my-shadow">
+                    <!-- <app-tiny-nav></app-tiny-nav> -->
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <h3 class="text-light">
+                                <app-user-btn [flip]="true"></app-user-btn>
+                                <span style="padding-left: 30px;"> {{currentUser.name | titlecase}}'s Information
+                                </span>
+                                <!-- {{currentUser.name}}'s Information -->
+                            </h3>
+                        </div>
+                    </nav>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Name: {{currentUser.name}}</li>
+                        <li class="list-group-item">E-mail: {{currentUser.email}}</li>
+                        <li class="list-group-item">Role: Admin</li>
+                        <li class="list-group-item">Phone: +9720528994325</li>
+                        <li class="list-group-item">Adress:Zefat anilevich</li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-end">
+                                <app-back-btn style="padding-right: 10px;"></app-back-btn>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
