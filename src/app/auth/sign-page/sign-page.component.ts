@@ -17,6 +17,9 @@ export class SignPageComponent {
   errorMsg = ' ';
   errMsgView = false;
 
+  confirmErrMsg = false;
+  confirmErrMsgValue = 'Password is not the same';
+
   signForm = new FormGroup({
     password: new FormControl('', {
       validators: [Validators.required, Validators.minLength(6)],
@@ -40,13 +43,10 @@ export class SignPageComponent {
   }
   onSubmit() {
     let value = this.signForm.getRawValue();
-    if (value.password != value.confirm) {
-      // console.log('password is not the same');
-      console.log(value);
-      return;
-    }
-
-    if (this.signForm.invalid) {
+    if (this.signForm.invalid || value.password != value.confirm) {
+      this.confirmErrMsg = true;
+      this.loading = false;
+      this.btnText = 'SignIn';
       return;
     }
     const { name, email, password } = value;

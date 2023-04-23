@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { User } from '../interfaces/interfaces.component';
 import { ApiService } from 'src/app/core/api.service';
 import { AuthService } from 'src/app/core/auth.service';
@@ -10,11 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(
-    private api: ApiService,
-    private auth: AuthService,
-    private router: Router
-  ) {}
+  @ViewChild('popup') popup!: ElementRef;
+  @ViewChild('poptwo') poptwo!: ElementRef;
+
+  @HostListener('window:click', ['$event'])
+  onClick(event: MouseEvent) {
+    if (
+      this.popup?.nativeElement.contains(event.target) ||
+      this.poptwo?.nativeElement.contains(event.target)
+    ) {
+      console.log('stay open');
+      // this.buttonClicked.emit();
+    } else {
+      this.poplist = false;
+    }
+  }
+
+  constructor(private api: ApiService, private router: Router) {}
 
   currentUser: User = this.api.getUserInfo();
 
@@ -23,10 +35,19 @@ export class NavbarComponent {
   //   return userName.toUpperCase();
   // }
 
-  popup = false;
+  poplist = false;
 
   popupFunc() {
-    this.popup = !this.popup;
+    this.poplist = !this.poplist;
+  }
+
+  closePop() {
+    // setTimeout(() => {
+    //   if (this.poplist === true) {
+    //     this.poplist = false;
+    //   }
+    // }, 1000);
+    console.log('close');
   }
   logout() {
     this.api.deleteToken();

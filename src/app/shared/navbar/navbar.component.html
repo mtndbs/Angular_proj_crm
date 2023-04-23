@@ -75,10 +75,12 @@
                     <a routerLink="/signup" class="nav-link active" aria-current="page">Sign-up</a>
                     <!-- signup -->
                 </button>
-                <app-user-btn (click)="popupFunc()"></app-user-btn>
+                <span #poptwo><app-user-btn (click)="popupFunc()"></app-user-btn></span>
+
             </div>
         </div>
     </div>
 </header>
-
-<app-pop-list *ngIf="popup" class="pop-list"></app-pop-list>
+<div #popup>
+    <app-pop-list (buttonClicked)="closePop()" *ngIf="poplist" class="pop-list"></app-pop-list>
+</div>

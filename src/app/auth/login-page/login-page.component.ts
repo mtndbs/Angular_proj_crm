@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/api.service';
 import { AuthService } from 'src/app/core/auth.service';
+import { User } from 'src/app/shared/interfaces/interfaces.component';
 
 @Component({
   selector: 'app-login-page',
@@ -15,11 +16,12 @@ export class LoginPageComponent {
     private router: Router,
     private auth: AuthService
   ) {}
+  currentUser: User = this.api.getUserInfo();
   errMsgView = false;
   errorMsg = '';
 
   loginMsgView = false;
-  loginMsg = 'Welcome back !  few seconds for login  ';
+  loginMsg = `Welcome back ${this.currentUser.name} !  few seconds for login  `;
 
   loading = false;
   btnText = 'Login';
