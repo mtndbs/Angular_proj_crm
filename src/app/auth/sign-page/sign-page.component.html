@@ -40,12 +40,10 @@
                 <input type="password" class="form-control" formControlName="confirm" id="floatingPassword"
                     placeholder="Password">
                 <label for="floatingPassword"><span class="input-text">Confirm password</span></label>
-                <div class="container text-danger my-err-field">
-                    <app-err-field [formField]="getFieldControl('confirm')"></app-err-field>
-
-                    <p *ngIf="confirmErrMsg"><i class="fa-solid fa-triangle-exclamation"></i> {{confirmErrMsgValue}}</p>
-
-
+                <div class="container text-danger my-err-field d-flex justify-content-center">
+                    <p *ngIf="confirmErrMsg"><i class="fa-solid fa-triangle-exclamation"></i> {{confirmErrMsgValue}}
+                    </p>
+                    <app-err-field class="ps-2" [formField]="getFieldControl('confirm')"></app-err-field>
                 </div>
             </div>
 

@@ -66,7 +66,7 @@ export class EmployeesPageComponent implements OnInit {
     console.log('refresh');
     setTimeout(() => {
       this.searchEmp = this.employees;
-    }, 300);
+    }, 400);
   }
 
   searchFunc() {
