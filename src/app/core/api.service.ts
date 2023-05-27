@@ -33,9 +33,14 @@ export class ApiService {
   }
 
   getUserInfo(): User {
-    const theUser = localStorage.getItem('user') || '';
-    const parsedUser = JSON.parse(theUser);
-    return parsedUser;
+    if (localStorage.getItem('user')) {
+      const theUser = localStorage.getItem('user') || '';
+      const parsedUser = JSON.parse(theUser);
+      return parsedUser;
+    } else {
+      let demo = { name: 'demo', email: 'demo@gmail.com' };
+      return demo;
+    }
   }
 
   POST<DynamicType>(
