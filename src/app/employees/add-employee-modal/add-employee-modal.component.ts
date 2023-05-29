@@ -71,7 +71,7 @@ export class AddEmployeeModalComponent {
     this.api.addEmployee(this.addEmployeeForm.value).subscribe({
       next: (data: Employee) => {
         console.log(data);
-        this._toastService.success(`${data.name} Added successfully`);
+        this._toastService.success(`"${data.name}" Added successfully`);
       },
       error: (err) => {
         console.log(err);

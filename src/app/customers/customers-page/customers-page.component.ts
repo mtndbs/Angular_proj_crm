@@ -43,7 +43,7 @@ export class CustomersPageComponent implements OnInit {
   refreshItems() {
     setTimeout(() => {
       this.getCustomers();
-    }, 1000);
+    }, 650);
   }
 }
 

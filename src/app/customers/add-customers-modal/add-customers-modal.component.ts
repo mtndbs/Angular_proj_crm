@@ -78,7 +78,7 @@ export class AddCustomersModalComponent {
     this.api.addCustomer(this.addcustomerForm.value).subscribe({
       next: (data: Customer) => {
         console.log(data);
-        this._toastService.success(`${data.firstName} Added successfully`);
+        this._toastService.success(`"${data.firstName}" Added successfully`);
       },
       error: (err) => {
         this._toastService.error('Somthing wrong');
