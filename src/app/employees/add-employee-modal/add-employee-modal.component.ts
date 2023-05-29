@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastService } from 'angular-toastify';
 import { ApiService } from 'src/app/core/api.service';
 import {
   Customer,
@@ -14,7 +15,7 @@ import {
 export class AddEmployeeModalComponent {
   title = 'Add Employee';
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private _toastService: ToastService) {}
   @Output() buttonClicked = new EventEmitter();
 
   onButtonClick() {
@@ -34,7 +35,7 @@ export class AddEmployeeModalComponent {
     }),
     phone: new FormControl('', {
       validators: [
-        Validators.minLength(8),
+        Validators.minLength(9),
         Validators.maxLength(12),
         Validators.required,
       ],
@@ -70,8 +71,12 @@ export class AddEmployeeModalComponent {
     this.api.addEmployee(this.addEmployeeForm.value).subscribe({
       next: (data: Employee) => {
         console.log(data);
+        this._toastService.success(`${data.name} Added successfully`);
       },
-      error: (err) => console.log(err),
+      error: (err) => {
+        console.log(err);
+        this._toastService.error('Somthing wrong');
+      },
     });
   }
 }

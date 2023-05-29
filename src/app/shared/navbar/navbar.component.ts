@@ -26,8 +26,15 @@ export class NavbarComponent {
     }
   }
 
-  constructor(private api: ApiService, private router: Router) {}
+  constructor(
+    private api: ApiService,
+    private router: Router,
+    private auth: AuthService
+  ) {}
 
+  loggedIn(): boolean {
+    return this.auth.isLoggedIn();
+  }
   currentUser: User = this.api.getUserInfo();
 
   // getFirstLetter(user: any): any {

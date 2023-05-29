@@ -8,6 +8,7 @@ import { ErrFieldComponent } from './err-field/err-field.component';
 import { CustomersViewComponent } from './customers-view/customers-view.component';
 import { RouterModule } from '@angular/router';
 import { CustomersEditComponent } from './customers-edit/customers-edit.component';
+import { AngularToastifyModule, ToastService } from 'angular-toastify';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { CustomersEditComponent } from './customers-edit/customers-edit.componen
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
+    AngularToastifyModule,
   ],
+  providers: [ToastService],
 })
 export class CustomersModule {}

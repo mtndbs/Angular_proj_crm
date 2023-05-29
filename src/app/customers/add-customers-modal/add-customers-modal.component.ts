@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastService } from 'angular-toastify';
 import { ApiService } from 'src/app/core/api.service';
 import { Customer } from 'src/app/shared/interfaces/interfaces.component';
 
@@ -12,7 +13,7 @@ export class AddCustomersModalComponent {
   title = 'Add Customer';
   myTest = 'hello';
   // @ViewChild('nameFieldRef') nameField!: ElementRef;
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private _toastService: ToastService) {}
   @Output() buttonClicked = new EventEmitter();
 
   onButtonClick() {
@@ -77,8 +78,13 @@ export class AddCustomersModalComponent {
     this.api.addCustomer(this.addcustomerForm.value).subscribe({
       next: (data: Customer) => {
         console.log(data);
+        this._toastService.success(`${data.firstName} Added successfully`);
       },
-      error: (err) => console.log(err),
+      error: (err) => {
+        this._toastService.error('Somthing wrong');
+
+        console.log(err);
+      },
     });
   }
 }

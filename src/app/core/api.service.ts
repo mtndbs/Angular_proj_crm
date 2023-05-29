@@ -38,7 +38,7 @@ export class ApiService {
       const parsedUser = JSON.parse(theUser);
       return parsedUser;
     } else {
-      let demo = { name: 'demo', email: 'demo@gmail.com' };
+      let demo = { name: 'User', email: 'demo@gmail.com' };
       return demo;
     }
   }

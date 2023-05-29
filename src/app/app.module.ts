@@ -13,6 +13,7 @@ import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
 import { NgChartsModule } from 'ng2-charts';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AngularToastifyModule, ToastService } from 'angular-toastify';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,9 +30,10 @@ import { DashboardModule } from './dashboard/dashboard.module';
     MainModule,
     NgChartsModule,
     DashboardModule,
+    AngularToastifyModule,
   ],
   exports: [BrowserModule],
-  providers: [],
+  providers: [ToastService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

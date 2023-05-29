@@ -72,7 +72,8 @@
                     <a class="nav-link active" (click)="logout()" aria-current="page">Log-out</a>
                     <!-- Login -->
                 </button>
-                <button type="button" class="btn btn-dark sign-btn text-dark me-2">
+
+                <button *ngIf="!loggedIn()" type="button" class="btn btn-dark sign-btn text-dark me-2">
                     <a routerLink="/signup" class="nav-link active" aria-current="page">Sign-up</a>
                     <!-- signup -->
                 </button>

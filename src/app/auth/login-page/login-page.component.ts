@@ -19,7 +19,6 @@ export class LoginPageComponent {
   currentUser: User = this.api.getUserInfo();
   errMsgView = false;
   errorMsg = '';
-
   loginMsgView = false;
   loginMsg = `Welcome back ${this.currentUser.name} !  few seconds for login  `;
 
@@ -53,8 +52,8 @@ export class LoginPageComponent {
 
     this.api.login(this.loginForm.value).subscribe({
       next: (data) => {
-        this.loginMsgView = true;
         if (data) this.api.setUserInfo(data.user);
+        this.loginMsgView = true;
         console.log(data);
         setTimeout(() => {
           if (data.token) this.api.setToken(data.token);
