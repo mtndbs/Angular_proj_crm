@@ -45,7 +45,7 @@ export class AddCustomersModalComponent {
     }),
     address: new FormControl('', {
       validators: [
-        Validators.minLength(2),
+        Validators.minLength(6),
         Validators.maxLength(100),
         Validators.required,
       ],
